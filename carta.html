@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#754b32">
+  <meta name="description" content="Explora la carta de La Casita del Cuy y agrega platos a tu pedido.">
+  <title>La carta | La Casita del Cuy</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="./index.html" aria-label="La Casita del Cuy, inicio">
+      <span class="brand-mark"><img src="./images/CUY_ICONO.png" width="24" height="24" alt=""></span>
+      <span>La Casita <em>del Cuy</em></span>
+    </a>
+    <button class="menu-toggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="primary-nav">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="nav" id="primary-nav" aria-label="Navegación principal">
+      <a href="./index.html">Inicio</a>
+      <a href="./carta.html" aria-current="page">Carta</a>
+      <a href="./index.html#nosotros">Nosotros</a>
+      <a href="./registro.html">Contacto</a>
+    </nav>
+    <a class="cart-button" href="./pedidos.html" aria-label="Ver mi pedido">
+      <span class="cart-icon" aria-hidden="true">♧</span>
+      <span class="cart-label">Mi pedido</span>
+      <span class="cart-count" aria-live="polite">0</span>
+    </a>
+  </header>
+
+  <main>
+    <section class="menu-section section" id="carta">
+      <div class="section-heading">
+        <div><p class="eyebrow">DE NUESTRA COCINA</p><h1>La carta</h1></div>
+        <p>Platos generosos, ingredientes frescos<br>y ese toque casero que siempre vuelve.</p>
+      </div>
+      <div class="category-tabs" role="group" aria-label="Filtrar platos por categoría">
+        <button class="category-tab active" type="button" data-category="todos" aria-pressed="true">Todo</button>
+        <button class="category-tab" type="button" data-category="criollo" aria-pressed="false">Menú criollo</button>
+        <button class="category-tab" type="button" data-category="menucuy" aria-pressed="false">Menú a base de cuy</button>
+        <button class="category-tab" type="button" data-category="bebidas" aria-pressed="false">Bebidas</button>
+        <button class="category-tab" type="button" data-category="extras" aria-pressed="false">Extras</button>
+      </div>
+      <div class="product-grid" id="product-grid" aria-live="polite"></div>
+      <div class="menu-footer">
+        <span>¿Tienes alguna consulta sobre ingredientes?</span>
+        <a href="./registro.html" class="text-link">Conversemos <span aria-hidden="true">↗</span></a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <a class="brand footer-brand" href="./index.html"><span class="brand-mark" aria-hidden="true">✳</span><span>La Casita <em>del Cuy</em></span></a>
+    <span>Tradición y sabor peruano en cada plato.</span>
+    <a class="back-top" href="#carta">Volver arriba ↑</a>
+    <small>© <span id="year"></span> La Casita del Cuy</small>
+  </footer>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  
+  
+  <script src="./script.js" defer></script>
+</body>
+</html>
+
+<!-- Guarda el carrito como pares [id, cantidad] en sessionStorage con la clave casita-cart. Para que pedidos.html muestre los nombres y calcule importes, su script también debe usar este mismo catálogo; esa corrección corresponde al siguiente archivo. -->
